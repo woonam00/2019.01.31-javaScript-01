@@ -6,33 +6,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>자바스크립트 DOM</title>
+    <link rel="stylesheet" href="../css/w3.css">
     <script src="../js/jquery-3.3.1.min.js"> </script>
     <!-- External 방식 -->
     <!-- <link rel="stylesheet" href="../css/style.css" rel="stylesheet"> -->
     <style>
         /* 인터널방식 */
-        .box{background-color:#f00; width:200px; height:200px;}
-        div{background-color:#0f0; width:200px; height:200px;}
-        #box1 {width: 200px; height: 200px; background-color: rgb(247, 130, 208);}
+        .box{background-color:#ff0; }
+        div{background-color:rgb(248, 163, 227);}
+        #box1 {background-color:#ccc;width:200px;}
     </style>
 </head>
 
 <body>
     <!-- 인라인방식 -->
-    <div class="box" id="box1" style="background-color:#f93";> </div>
-
+    <button class="w3-button w3-indigo" id="bt1" >확인</button>
+    <button class="w3-button w3-red" id="bt2" >초기화</button>
+    <div class="box" id="box1">
+      
+    </div>
     <script>
-        const log = console.log;
-        var box1 = document.getElementById("box1");
-        box1.addEventListener("click", box1Click);
 
-        function box1Click() {
-            box1.style.backgroundColor = "blue";
-        };
+        var log = console.log
+        var bt1 =  document.getElementById("bt1");
+        var bt2 =  document.getElementById("bt2");
+        var box1 =  document.getElementById("box1");
 
-        box1.addEventListener("click", function () {
-            box1.style.background = "blue"
+
+
+        $("#bt1").on("click", function(){
+          var html = $("#box1").html();
+          $("#box1").html(html+'<div>★</div>')
         });
+      
+        $("#bt2").click(function(){
+            $("#box1").html('');
+
+        });
+
+
+
+
+   /*     
+
+       bt1.addEventListener("click", function(){i
+          var html = box1.innerHTML;
+          box1.innerHTML = html + '<div>★</div>';
+          log(html);
+        });
+
+        bt2.addEventListener("click", function(){
+          box1.innerHTML = '';
+        });
+ */
+
+
+        // const log = console.log;
+        // var box1 = document.getElementById("box1");
+        // box1.addEventListener("click", box1Click);
+
+        // function box1Click() {
+        //     box1.style.backgroundColor = "blue";
+        // };
+
+        // box1.addEventListener("click", function () {
+        //     box1.style.background = "blue"
+        // });
 
         /*  box1.addEventListener("click",function(){alert("눌러쪙!~")
          }); */

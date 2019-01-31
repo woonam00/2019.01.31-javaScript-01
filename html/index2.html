@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>자바스크립트 DOM</title>
+    <script src="../js/jquery-3.3.1.min.js"> </script>
+    <!-- External 방식 -->
+    <!-- <link rel="stylesheet" href="../css/style.css" rel="stylesheet"> -->
+    <style>
+        /* 인터널방식 */
+        .box{background-color:#f00; width:200px; height:200px;}
+        div{background-color:#0f0; width:200px; height:200px;}
+        #box1 {width: 200px; height: 200px; background-color: rgb(247, 130, 208);}
+    </style>
+</head>
+
+<body>
+    <!-- 인라인방식 -->
+    <div class="box" id="box1" style="background-color:#f93";> </div>
+
+    <script>
+        const log = console.log;
+        var box1 = document.getElementById("box1");
+        box1.addEventListener("click", box1Click);
+
+        function box1Click() {
+            box1.style.backgroundColor = "blue";
+        };
+
+        box1.addEventListener("click", function () {
+            box1.style.background = "blue"
+        });
+
+        /*  box1.addEventListener("click",function(){alert("눌러쪙!~")
+         }); */
+
+        /*     document.getElementById("box1").style.width = "200px";
+            document.getElementById("box1").style.height = "200px";
+            document.getElementById("box1").style.backgroundColor = "#f00"; */
+    </script>
+
+</body>
+
+</html>
